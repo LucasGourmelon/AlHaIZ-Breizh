@@ -48,6 +48,7 @@ Pour installer le projet, créer un dossier 'Config.php' dans le dossier Service
     define("DB_DSN","pgsql:host={votre host};dbname={nom de database};port={votre port}");
     define("DB_USERNAME","{utilisateur de votre bdd}");
     define("DB_PASSWORD","{password de votre bdd}");
+    define("MAP_API_KEY","{clé de votre api google maps}");
 ?>
 ```
 
