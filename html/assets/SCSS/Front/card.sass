@@ -1,0 +1,95 @@
+@use '../general' as general
+
+.card
+    min-height: 40vh
+    margin: 1em auto
+    border-radius: 5px
+    background-color: #fff
+    font-family: general.$police-titre
+    cursor: pointer
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+
+    //hover
+    &:hover
+        // zoom qui n'affecte pas la disposition des éléments
+        transform: scale(1.02)
+        transition: transform 0.2s
+
+    .imgbox
+        height: 25vh
+        overflow: hidden
+        img
+            // border raduis conins du haut
+            border-top-left-radius: 5px
+            border-top-right-radius: 5px
+            width: 100%
+            height: 100%  // Assure que l'image couvre toute la hauteur de imgbox
+            object-fit: cover  // Garantit que l'image couvre la zone disponible, coupant l'excès de façon à préserver les proportions
+            object-position: bottom  // Positionne la partie visible de l'image vers le bas
+
+    .content
+        padding: 10px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        .nomVille
+            font-size: 1rem
+            color: black
+            margin-bottom: 0.3rem
+
+        .logementTarif
+            display: flex
+            justify-content: space-between
+            align-items: baseline
+            margin-bottom: 0.3rem
+            gap: 20px
+
+        .titre
+                font-size: 1rem
+                white-space: nowrap
+                overflow: hidden
+                text-overflow: ellipsis
+
+        .tarif
+            font-size: 1rem
+            font-weight: bold
+            color: black
+
+        .description 
+            font-size: 0.9rem
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 3
+            margin-bottom: 0.3rem
+            font-family: general.$police-texte
+
+        .noteEtAvis
+            align-self: flex-start
+            margin-top: auto
+            display: flex
+            align-items: center  // Assure un alignement vertical parfait des éléments
+            flex-wrap: nowrap  // Assure que les éléments restent sur une seule ligne
+
+            .note
+                flex: 1 0 auto  
+                align-items: center
+                display: flex
+                margin-right: 10px  
+
+            .nbAvis
+                flex: 0 0 auto 
+
+@media screen and (max-width: general.$max-width-telephone)
+    .card
+        width: 76vw
+
+        &:hover
+            transform: scale(1)
+
+
+@media screen and (min-width: general.$max-width-telephone)
+    .card 
+        width: 300px
